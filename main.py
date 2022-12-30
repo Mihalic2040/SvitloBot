@@ -16,7 +16,9 @@ def get_token ():
         print("Token file not found")
         exit()
 
-
+print("Starting initializing bot...")
+token_m = str(get_token())
+bot = telebot.TeleBot(token_m)
 
 def init_bot ():
 
@@ -205,9 +207,7 @@ alarm_process.start()
     #add_user("12345678")
 
     #print('Start poolig bot')
-print("Starting initializing bot...")
-token_m = str(get_token())
-bot = telebot.TeleBot(token_m)
+
 bot.polling()
 print("Bot init successful")
     
