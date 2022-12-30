@@ -198,6 +198,6 @@ if __name__ ==  '__main__':
     #add_user("12345678")
 
     #print('Start poolig bot')
-    bot.polling(True)
+    bot.polling()
 
     #GET_STATUS()
