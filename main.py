@@ -16,10 +16,15 @@ def get_token ():
         print("Token file not found")
         exit()
 
-token_m = str(get_token())
 
 
-bot = telebot.TeleBot(token_m)
+def init_bot ():
+
+    print("Starting initializing bot...")
+    token_m = str(get_token())
+    bot = telebot.TeleBot(token_m)
+    bot.polling()
+    print("Bot init successful")
 
 cmd = "termux-battery-status"
 
@@ -201,6 +206,6 @@ if __name__ ==  '__main__':
     #add_user("12345678")
 
     #print('Start poolig bot')
-    bot.polling()
+    init_bot()
 
     #GET_STATUS()
