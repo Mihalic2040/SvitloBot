@@ -184,20 +184,19 @@ def linkbot():
 
 
 
-if __name__ ==  '__main__':
-    print("starting bot")
-    print("Cheacking database...")
-    if check_db() == "NE":
-        print("FAILED")
-        print("Cretae DB.txt")
-        exit()
-    elif check_db() == "200":
-        print("GOOD")
-    print("Starting alarm thread...")
-    # alrm thread
 
-    alarm_process = Thread(target=alarm, args=())
-    alarm_process.start()
+print("starting bot")
+print("Cheacking database...")
+if check_db() == "NE":
+    print("FAILED")
+    print("Cretae DB.txt")
+    exit()
+elif check_db() == "200":
+    print("GOOD")
+print("Starting alarm thread...")
+# alrm thread
+alarm_process = Thread(target=alarm, args=())
+alarm_process.start()
     # alrm thread
 
     #print("TESTING")
@@ -206,11 +205,11 @@ if __name__ ==  '__main__':
     #add_user("12345678")
 
     #print('Start poolig bot')
-    print("Starting initializing bot...")
-    token_m = str(get_token())
-    bot = telebot.TeleBot(token_m)
-    bot.polling()
-    print("Bot init successful")
+print("Starting initializing bot...")
+token_m = str(get_token())
+bot = telebot.TeleBot(token_m)
+bot.polling()
+print("Bot init successful")
     
 
     #GET_STATUS()
