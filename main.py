@@ -4,21 +4,14 @@ from threading import Thread
 import time
 import subprocess
 import json
+from token import bottoken
 
-token = ""
 
-def get_token ():
-    try:
-        toke_file = open("token.txt", 'r')
-        token = toke_file.read()
-        return token
-    except:
-        print("Token file not found")
-        exit()
+
 
 print("Starting initializing bot...")
-token_m = str(get_token())
-bot = telebot.TeleBot(token_m)
+
+bot = telebot.TeleBot(bottoken)
 
 def init_bot ():
 
@@ -185,20 +178,19 @@ def linkbot():
 #bot.polling()
 
 
-
-
-print("starting bot")
-print("Cheacking database...")
-if check_db() == "NE":
-    print("FAILED")
-    print("Cretae DB.txt")
-    exit()
-elif check_db() == "200":
-    print("GOOD")
-print("Starting alarm thread...")
-# alrm thread
-alarm_process = Thread(target=alarm, args=())
-alarm_process.start()
+if __name__ == "__main__":
+    print("starting bot")
+    print("Cheacking database...")
+    if check_db() == "NE":
+        print("FAILED")
+        print("Cretae DB.txt")
+        exit()
+    elif check_db() == "200":
+        print("GOOD")
+    print("Starting alarm thread...")
+    # alrm thread
+    alarm_process = Thread(target=alarm, args=())
+    alarm_process.start()
     # alrm thread
 
     #print("TESTING")
@@ -208,8 +200,10 @@ alarm_process.start()
 
     #print('Start poolig bot')
 
-bot.polling()
-print("Bot init successful")
+    bot.polling()
+    print("Bot init successful")
     
 
     #GET_STATUS()
+
+
