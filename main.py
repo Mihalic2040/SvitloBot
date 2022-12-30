@@ -206,6 +206,11 @@ if __name__ ==  '__main__':
     #add_user("12345678")
 
     #print('Start poolig bot')
-    init_bot()
+    print("Starting initializing bot...")
+    token_m = str(get_token())
+    bot = telebot.TeleBot(token_m)
+    bot.polling()
+    print("Bot init successful")
+    
 
     #GET_STATUS()
