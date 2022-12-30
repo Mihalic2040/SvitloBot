@@ -5,20 +5,22 @@ import time
 import subprocess
 import json
 
+token = ""
 
+def get_token ():
+    try:
+        toke_file = open("token.txt", 'r')
+        token = toke_file.read()
+        return token
+    except:
+        print("Token file not found")
+        exit()
 
-
-try:
-    toke_file = open("token.txt", 'r')
-    token = toke_file.read()
-except:
-    print("Token file not found")
-    exit()
-
+bot = telebot.TeleBot(get_token())
 
 cmd = "termux-battery-status"
 
-bot = telebot.TeleBot(token)
+
 
 def check_db():
     try:
