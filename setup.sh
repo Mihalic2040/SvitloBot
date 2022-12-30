@@ -2,7 +2,9 @@ pkg update
 pkg install python -y
 pkg install openssl -y
 pkg install wget -y
+pkg install termux-api -y
 pip install pyTelegramBotAPI
+
 
 
 
@@ -13,7 +15,7 @@ touch DB.txt
 
 clear
 
-echo "INPUT TELEGRAM TOKEN: "
+echo "Встав Api ключ: "
 
 read token
 
