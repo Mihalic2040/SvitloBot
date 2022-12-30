@@ -16,7 +16,10 @@ def get_token ():
         print("Token file not found")
         exit()
 
-bot = telebot.TeleBot(get_token())
+token_m = str(get_token())
+
+
+bot = telebot.TeleBot(token_m)
 
 cmd = "termux-battery-status"
 
